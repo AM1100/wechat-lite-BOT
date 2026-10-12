@@ -1,0 +1,30 @@
+services:
+  weixin:
+    image: wechat-lite:local
+    build:
+      context: ./wechat-desktop-bot
+    restart: unless-stopped
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: Asia/Shanghai
+      CUSTOM_USER: wechat
+      PASSWORD: ${WECHAT_DESKTOP_PASSWORD:?Run sh setup.sh first}
+      PIXELFLUX_WAYLAND: "false"
+      QT_ACCESSIBILITY: "1"
+      QT_LINUX_ACCESSIBILITY_ALWAYS_ON: "1"
+    volumes:
+      - ./data:/config
+      - ./wechat-desktop-bot:/config/wechat-lite
+    ports:
+      - "127.0.0.1:3001:3001"
+      - "127.0.0.1:8787:8787"
+    dns:
+      - 223.5.5.5
+      - 119.29.29.29
+    shm_size: "1gb"
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"

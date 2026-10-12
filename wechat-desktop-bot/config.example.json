@@ -1,0 +1,35 @@
+{
+  "enabled": true,
+  "dry_run": true,
+  "allowed_private_chats": [],
+  "rotate_visible_chats": true,
+  "poll_seconds": 3,
+  "merge_seconds": 4,
+  "max_merge_seconds": 12,
+  "min_reply_interval_seconds": 20,
+  "max_requests_per_day": 60,
+  "max_requests_per_friend_per_day": 20,
+  "history_rounds": 3,
+  "history_max_chars": 1600,
+  "history_idle_seconds": 1800,
+  "input_max_chars": 800,
+  "reply_max_chars": 250,
+  "model": {
+    "base_url": "https://api.deepseek.com/v1",
+    "api_key": "YOUR_API_KEY",
+    "name": "deepseek-flash",
+    "max_output_tokens": 512,
+    "output_limit_field": "max_tokens",
+    "timeout_seconds": 60,
+    "system_prompt": "根据当前好友的消息和近期对话，代拟一条自然、简短的微信回复。\n只输出可发送的正文，不加标题、引号、标签或解释。\n简单确认就简短确认；日常聊天通常一两句。对方明确求助时才展开具体步骤。\n直接回应当前内容，不复述整段问题，不套用客服话术，不为了续聊每次追加反问。\n语气友好、随意，结合当前关系和上下文，不固定使用粗口、梗或表情。\n不要编造用户的经历、位置、生活状态或承诺；涉及安排、见面、付款等，缺信息时先确认。\n多条连续消息一起理解，回应主要内容，不逐条点评。\n日常优先单行，需要分句时只换行一次，不留空白行。\n有人直接问是否自动回复时如实说明。",
+    "extra_body": {
+      "thinking": {
+        "type": "disabled"
+      }
+    },
+    "timeout_retries": 1,
+    "style_profile": ""
+  },
+  "model_concurrency": 1,
+  "global_request_interval_seconds": 10
+}

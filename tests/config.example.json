@@ -1,0 +1,27 @@
+{
+  "enabled": true,
+  "dry_run": true,
+  "allowed_private_chats": [],
+  "rotate_visible_chats": false,
+  "poll_seconds": 3,
+  "merge_seconds": 4,
+  "max_merge_seconds": 12,
+  "min_reply_interval_seconds": 10,
+  "max_requests_per_day": 60,
+  "max_requests_per_friend_per_day": 20,
+  "history_rounds": 3,
+  "history_max_chars": 1600,
+  "history_idle_seconds": 1800,
+  "input_max_chars": 800,
+  "reply_max_chars": 250,
+  "model": {
+    "base_url": "https://YOUR_PROVIDER/v1",
+    "api_key": "YOUR_API_KEY",
+    "name": "YOUR_MODEL_NAME",
+    "max_output_tokens": 180,
+    "output_limit_field": "max_tokens",
+    "timeout_seconds": 30,
+    "system_prompt": "你是我的微信回复助手。用自然、简短的中文回复，通常不超过三句话。不编造我的经历、安排或承诺；不确定的事情直接说明。",
+    "extra_body": {}
+  }
+}
